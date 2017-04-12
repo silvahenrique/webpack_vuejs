@@ -68,12 +68,24 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-var r=43;
+"use strict";
 
-alert(r);
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Form = function Form() {
+  _classCallCheck(this, Form);
+
+  var numbers = [1, 2, 3].map(function (n) {
+    return n + 1;
+  });
+
+  console.log(numbers);
+};
+
+new Form();
 
 /***/ })
 /******/ ]);
