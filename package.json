@@ -1,0 +1,24 @@
+{
+  "name": "webpack_vuejs_googlemaps",
+  "version": "1.0.0",
+  "description": "webpack with vuejs and googlemaps",
+  "main": "index.js",
+  "scripts": {
+    "build": "node_modules/.bin/webpack",
+    "watch": "npm run build -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henriquewinchester/webpack_vuejs_googlemaps.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/henriquewinchester/webpack_vuejs_googlemaps/issues"
+  },
+  "homepage": "https://github.com/henriquewinchester/webpack_vuejs_googlemaps#readme",
+  "devDependencies": {
+    "webpack": "^2.3.3"
+  }
+}
