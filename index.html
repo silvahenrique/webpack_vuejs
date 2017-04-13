@@ -3,8 +3,32 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <style>
+      input {
+        width: 100%;
+        height: 45px;
+        font-size: 35px;
+        color: 	#3a8660;
+        overflow: #9f79a0;
+        padding: 5px;
+      }
+
+      p {
+        width: 100%;
+        height: 45px;
+        font-size: 35px;
+        color: #f195aa;
+        padding: 5px;
+      }
+    </style>
   </head>
   <body>
+
+    <div id="app">
+      <input v-model="message" type="text">
+      <p>{{ message }}</p>
+      <Example></Example>
+    </div>
 
     <script src="./dist/bundle.js"></script>
   </body>

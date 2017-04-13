@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "node_modules/.bin/webpack",
-    "prod": "NODE_ENV=production node_modules/.bin/webpack",
-    "watch": "npm run build -- --watch"
+    "build": "NODE_ENV=production node_modules/.bin/webpack",
+    "watch": "npm run dev -- --watch"
   },
   "repository": {
     "type": "git",
@@ -27,5 +27,11 @@
     "css-loader": "^0.28.0",
     "style-loader": "^0.16.1",
     "webpack": "^2.3.3"
+  },
+  "dependencies": {
+    "axios": "^0.16.1",
+    "jquery": "^3.2.1",
+    "lodash": "^4.17.4",
+    "vue": "^2.2.6"
   }
 }

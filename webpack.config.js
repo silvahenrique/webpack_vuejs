@@ -21,11 +21,24 @@ module.exports = {
       }
     ]
   },
-  plugins: []
+  plugins: [],
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js'
+    }
+  }
 };
 
 if (inProduction) {
   module.exports.plugins.push(
     new webpack.optimize.UglifyJsPlugin()
+  );
+
+  module.exports.plugins.push(
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
+    })
   );
 }

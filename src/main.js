@@ -1,10 +1,8 @@
-class Form {
-  constructor() {
-    let numbers =  [1, 2, 3].map(n => n + 1);
+import Vue from 'vue';
 
-    console.log(numbers);
-  }
-}
-
-
-new Form();
+const app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Oi eu sou um Vue Model!'
+    }
+});
