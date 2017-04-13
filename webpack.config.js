@@ -5,7 +5,7 @@ var inProduction = (process.env.NODE_ENV === "production");
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, './public/js'),
     filename: 'bundle.js'
   },
   module: {
