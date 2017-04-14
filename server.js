@@ -1,44 +1,13 @@
-'use strict';
-
 const path = require('path');
-const Hapi = require('hapi');
-const server = new Hapi.Server();
+const express = require('express');
+const app = express();
 
-server.connection({
-  port: 3000,
-  host: 'localhost'
+app.use('/static', express.static('public'));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './views/index.html'));
 });
 
-server.register(require('inert'), (err) => {
-  if (err) {
-    throw err;
-  }
-
-  server.route({
-    method: 'GET',
-    path: '/',
-    handler: function (request, reply) {
-      reply.file(path.resolve(__dirname, './views/index.html'));
-    }
-  });
-
-  server.route({
-    method: 'GET',
-    path: '/{param*}',
-    handler: {
-      directory: {
-        path: 'public/',
-        listing: true
-      }
-    }
-  });
-
-});
-
-server.start((err) => {
-  if (err) {
-    throw err;
-  }
-
-  console.log(`Server running at: ${server.info.uri}`);
+app.listen(8000, () => {
+  console.log('Server listening on port 8000.');
 });
