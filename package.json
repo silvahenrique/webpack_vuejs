@@ -1,13 +1,13 @@
 {
-  "name": "webpack_vuejs_googlemaps",
+  "name": "webpack_vuejs",
   "version": "1.0.0",
-  "description": "webpack with vuejs and googlemaps",
+  "description": "webpack_vuejs",
   "main": "index.js",
   "scripts": {
     "dev": "node_modules/.bin/webpack",
     "build": "NODE_ENV=production node_modules/.bin/webpack",
     "watch": "npm run dev -- --watch",
-    "start": "node server.js"
+    "start": "node server/server.js"
   },
   "repository": {
     "type": "git",

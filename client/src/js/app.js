@@ -4,7 +4,7 @@ require('./bootstrap');
 const app = new Vue({
     el: '#app',
     data: {
-      message: 'Oi eu sou um Vue Model!'
+      message: 'I\'m a Vue Model!'
     },
     created() {
       console.log("created");
