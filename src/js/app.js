@@ -1,5 +1,6 @@
-import Vue from 'vue';
+require('./bootstrap');
 
+// Creating a Vue instance
 const app = new Vue({
     el: '#app',
     data: {
@@ -10,9 +11,5 @@ const app = new Vue({
     },
     mounted() {
       console.log("mounted");
-
-      let list = [1, 4, 5, 5];
-
-      console.log(list.map((element) => element * 3))
     }
 });
