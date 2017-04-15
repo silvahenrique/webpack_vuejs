@@ -5,5 +5,6 @@ import Map from './Map.vue';
 export const routes = [
   { path: '/', component: Home },
   { path: '/about', component: About },
-  { path: '/map/:lat/:lon', component: Map },
+  { path: '/map', component: Map },
+  // { path: '/map/:lat/:lon', component: Map },
 ];
