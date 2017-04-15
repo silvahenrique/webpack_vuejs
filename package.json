@@ -2,19 +2,15 @@
   "name": "webpack_vuejs",
   "version": "1.0.0",
   "description": "webpack_vuejs",
-  "main": "index.js",
   "scripts": {
     "dev": "node_modules/.bin/webpack",
     "build": "NODE_ENV=production node_modules/.bin/webpack",
     "watch": "npm run dev -- --watch",
     "start": "node server/server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/henriquewinchester/webpack_vuejs_googlemaps.git"
-  },
+  "repository": "git+https://github.com/henriquewinchester/webpack_vuejs_googlemaps.git",
   "keywords": [],
-  "author": "",
+  "author": "henrique <henrique.contato@outlook.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/henriquewinchester/webpack_vuejs_googlemaps/issues"
@@ -27,6 +23,8 @@
     "babel-preset-es2015": "^6.24.1",
     "css-loader": "^0.28.0",
     "style-loader": "^0.16.1",
+    "vue-loader": "^11.1.4",
+    "vue-template-compiler": "^2.2.1",
     "webpack": "^2.3.3"
   },
   "dependencies": {
@@ -36,6 +34,9 @@
     "inert": "^4.2.0",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
-    "vue": "^2.2.6"
+    "vue": "^2.2.6",
+    "vue-router": "^2.4.0",
+    "vuex": "^2.3.0",
+    "vuex-router-sync": "^4.1.2"
   }
 }

@@ -1,7 +1,7 @@
 import Lodash from 'lodash';
+import Axios from 'axios';
 import jQuery from 'jquery';
 import Vue from 'vue';
-import Axios from 'axios';
 
 window._ = Lodash;
 window.$ = window.jQuery = jQuery;

@@ -3,7 +3,9 @@ var path = require('path');
 var inProduction = (process.env.NODE_ENV === "production");
 
 module.exports = {
-  entry: ['./client/src/js/app.js'],
+  entry: [
+    './client/src/js/app.js'
+  ],
   output: {
     path: path.resolve(__dirname, './client/public/js'),
     filename: 'bundle.js'
@@ -13,6 +15,16 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+          loaders: {
+
+          }
+          // other vue-loader options go here
+        }
       },
       {
         test: /\.js$/,

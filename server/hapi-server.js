@@ -15,7 +15,7 @@ server.register(require('inert'), (err) => {
     method: 'GET',
     path: '/',
     handler: function (request, reply) {
-      reply.file(path.resolve(__dirname, './views/index.html'));
+      reply.file(path.resolve(__dirname, '../client/views/index.html'));
     }
   });
 
@@ -24,7 +24,7 @@ server.register(require('inert'), (err) => {
     path: '/static/{param*}',
     handler: {
       directory: {
-        path: 'public/',
+        path: path.resolve(__dirname, '../client/public/'),
         listing: true
       }
     }
