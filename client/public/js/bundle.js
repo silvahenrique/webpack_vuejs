@@ -355,29 +355,16 @@ var _App = __webpack_require__(12);
 
 var _App2 = _interopRequireDefault(_App);
 
-var _Home = __webpack_require__(13);
-
-var _Home2 = _interopRequireDefault(_Home);
-
-var _About = __webpack_require__(11);
-
-var _About2 = _interopRequireDefault(_About);
-
-var _Map = __webpack_require__(14);
-
-var _Map2 = _interopRequireDefault(_Map);
+var _routerConfig = __webpack_require__(25);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // Install Vue Router
 // require('./bootstrap');
 _vue2.default.use(_vueRouter2.default);
-// import { routes } from './router-config';
-
-var routes = [{ path: '/', component: _Home2.default }, { path: '/about', component: _About2.default }, { path: '/map', component: _Map2.default }];
 
 var router = new _vueRouter2.default({
-  routes: routes
+  routes: _routerConfig.routes
 });
 
 // Creating a Vue instance
@@ -407,12 +394,18 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 exports.default = {
   name: 'app',
   data: function data() {
     return {
-      title: 'App'
+      title: 'My Vue App'
     };
   }
 };
@@ -2344,7 +2337,7 @@ exports = module.exports = __webpack_require__(8)(undefined);
 
 
 // module
-exports.push([module.i, "\nh1 {\n  color: #cceaaf;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -2644,7 +2637,7 @@ module.exports = Component.exports
 
 var Component = __webpack_require__(0)(
   /* script */
-  null,
+  __webpack_require__(26),
   /* template */
   __webpack_require__(18),
   /* scopeId */
@@ -2677,7 +2670,23 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('h1', [_vm._v(_vm._s(_vm.title))]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('router-view')], 1)
+  return _c('div', [_c('h1', [_vm._v(_vm._s(_vm.title))]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('router-link', {
+    attrs: {
+      "to": "/"
+    }
+  }, [_vm._v("Home")]), _vm._v(" "), _c('router-link', {
+    attrs: {
+      "to": "/map/40.00/90.00"
+    }
+  }, [_vm._v("Map")]), _vm._v(" "), _c('router-link', {
+    attrs: {
+      "to": "/map/70.00/120.00"
+    }
+  }, [_vm._v("Map")]), _vm._v(" "), _c('router-link', {
+    attrs: {
+      "to": "/about"
+    }
+  }, [_vm._v("About")]), _vm._v(" "), _c('router-view')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -2694,7 +2703,7 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _vm._m(0)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('h1', [_vm._v("HOME")])])
+  return _c('div', [_c('h2', [_vm._v("HOME")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -2711,7 +2720,7 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _vm._m(0)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('h1', [_vm._v("About")])])
+  return _c('div', [_c('h2', [_vm._v("About")]), _vm._v(" "), _c('p', [_vm._v("\n    Testing how to use Vue.js with Wepback and Express.js.\n  ")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -2726,10 +2735,12 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('h1', [_vm._v("Map")])])
-}]}
+  return _c('div', [_c('h2', [_vm._v("Map")]), _vm._v(" "), _c('p', [_vm._v("\n    Latitude: " + _vm._s(_vm.$route.params.lat) + "\n  ")]), _vm._v(" "), _c('p', [_vm._v("\n    Longitude: " + _vm._s(_vm.$route.params.lon) + "\n  ")]), _vm._v(" "), _c('button', {
+    on: {
+      "click": _vm.goHome
+    }
+  }, [_vm._v("Go Home")])])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -14762,6 +14773,78 @@ Vue$3.compile = compileToFunctions;
 
 module.exports = __webpack_require__(3);
 
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.routes = undefined;
+
+var _Home = __webpack_require__(13);
+
+var _Home2 = _interopRequireDefault(_Home);
+
+var _About = __webpack_require__(11);
+
+var _About2 = _interopRequireDefault(_About);
+
+var _Map = __webpack_require__(14);
+
+var _Map2 = _interopRequireDefault(_Map);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var routes = exports.routes = [{ path: '/', component: _Home2.default }, { path: '/about', component: _About2.default }, { path: '/map/:lat/:lon', component: _Map2.default }];
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  data: function data() {
+    return {};
+  },
+  created: function created() {
+    // alert(this.$route.params.lon)
+  },
+
+  methods: {
+    goHome: function goHome() {
+      this.$router.push('/');
+    }
+  },
+  watch: {
+    '$route': function $route(to, from) {
+      // alert(this.$route.params.lon)
+    }
+  }
+};
 
 /***/ })
 /******/ ]);

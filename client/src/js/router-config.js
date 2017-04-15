@@ -1,8 +1,9 @@
-const NotFound = { template: '<p>Page not found</p>' }
-const Home = { template: '<p>home page</p>' }
-const About = { template: '<p>about page</p>' }
+import Home from './Home.vue';
+import About from './About.vue';
+import Map from './Map.vue';
 
-export const routes = {
-  '/': Home,
-  '/about': About
-}
+export const routes = [
+  { path: '/', component: Home },
+  { path: '/about', component: About },
+  { path: '/map/:lat/:lon', component: Map },
+];
