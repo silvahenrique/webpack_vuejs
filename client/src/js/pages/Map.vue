@@ -5,7 +5,7 @@
     <div id="map"></div>
 
     <p>
-      <button @click="goHome">Go Home</button>
+      <button @click="goHome" class="btn btn-default">Go Home</button>
     </p>
   </div>
 </template>
@@ -31,7 +31,7 @@
         </div>
       `;
 
-      let map = L.map('map').setView(holmesHouse, 17);
+      let map = L.map('map').setView(holmesHouse, 6);
 
       let marker = L.marker(holmesHouse).addTo(map);
       marker.bindPopup(info).openPopup();

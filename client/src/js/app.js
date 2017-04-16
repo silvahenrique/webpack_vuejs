@@ -1,5 +1,5 @@
-// require('./bootstrap');
-import Vue from 'vue';
+require('./bootstrap');
+
 import VueRouter from 'vue-router'
 
 import App from './App.vue';
@@ -12,6 +12,9 @@ const router = new VueRouter({
   routes,
   // mode: 'history'
 });
+
+// Registering Vue Components
+// Vue.component('example', require('./components/Example.vue'));
 
 // Creating a Vue instance
 const app = new Vue({

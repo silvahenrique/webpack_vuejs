@@ -7,3 +7,6 @@ window._ = Lodash;
 window.$ = window.jQuery = jQuery;
 window.Vue = Vue;
 window.axios = Axios;
+
+require('bootstrap-sass');
+require('../sass/app.scss');
