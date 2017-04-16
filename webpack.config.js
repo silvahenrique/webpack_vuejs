@@ -1,6 +1,8 @@
 var webpack = require('webpack');
 var path = require('path');
+var glob = require('glob');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var PurifyCSSPlugin = require('purifycss-webpack');
 var inProduction = (process.env.NODE_ENV === "production");
 
 module.exports = {
@@ -35,6 +37,13 @@ module.exports = {
         }
       },
       {
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        loader: 'file-loader',
+        options: {
+          name: '../images/[name].[hash].[ext]'
+        }
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: "babel-loader"
@@ -43,6 +52,15 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('[name].css'),
+
+    // new PurifyCSSPlugin({
+    //   // Give paths to parse for rules. These should be absolute!
+    //   // paths: glob.sync(path.join(__dirname, 'client/views/*.html')),
+    //   // paths: glob.sync(path.join(__dirname, 'client/src/js/*.vue')),
+    //   // paths: glob.sync(path.join(__dirname, 'client/src/js/pages/*.vue')),
+    //   minimize: inProduction
+    // }),
+
     new webpack.LoaderOptionsPlugin({
       minimize: inProduction
     })
