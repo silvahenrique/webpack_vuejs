@@ -1,6 +1,6 @@
 require('./bootstrap');
 
-import VueRouter from 'vue-router'
+import VueRouter from 'vue-router';
 
 import App from './App.vue';
 import { routes } from './router-config';

@@ -3,15 +3,17 @@ var path = require('path');
 var glob = require('glob');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var PurifyCSSPlugin = require('purifycss-webpack');
+var CleanWebpackPlugin = require('clean-webpack-plugin')
 var inProduction = (process.env.NODE_ENV === "production");
 
 module.exports = {
   entry: {
     app: './client/src/js/app.js',
+    vendor: ['jquery']
   },
   output: {
     path: path.resolve(__dirname, './client/public/js'),
-    filename: '[name].js'
+    filename: '[name].[chunkhash].js'
   },
   module: {
     rules: [
@@ -51,6 +53,14 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(
+      ['js'],
+      {
+        root: path.resolve(__dirname, './client/public/'),
+        verbose: true,
+        dry: false
+      }
+    ),
     new ExtractTextPlugin('[name].css'),
 
     // new PurifyCSSPlugin({
@@ -63,7 +73,15 @@ module.exports = {
 
     new webpack.LoaderOptionsPlugin({
       minimize: inProduction
-    })
+    }),
+    function () {
+      this.plugin('done', (status) => {
+        require('fs').writeFileSync(
+          path.join(__dirname, 'client/public/manifest.json'),
+          JSON.stringify(status.toJson().assetsByChunkName)
+        );
+      });
+    }
   ],
   resolve: {
     alias: {

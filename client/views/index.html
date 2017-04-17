@@ -8,6 +8,27 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/static/js/app.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <script>
+    var headers = new Headers();
+    
+    var init = { 
+      method: 'GET',
+      headers: headers,
+      mode: 'cors',
+      cache: 'default' 
+    };
+    
+    fetch('/static/manifest.json', init)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(json) {
+        console.log(json.app[0]);
+
+        document.querySelector("#appjs").src = "/static/js/" + json.app[0];
+      });
+
+    </script>
   </head>
   <body>
 
@@ -16,6 +37,6 @@
       </div>
     </div>
 
-    <script src="/static/js/app.js"></script>
+    <script id="appjs" src=""></script>
   </body>
 </html>
