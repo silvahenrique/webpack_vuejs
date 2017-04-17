@@ -1,6 +1,4 @@
-# webpack_vuejs
-
-# Simple project using webpack with Vue.js and Express.js
+## Simple project using webpack with Vue.js and Express.js
 
 ```{r, engine='bash', count_lines}
 # Install dependencies
