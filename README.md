@@ -1,11 +1,20 @@
 # webpack_vuejs
 
-webpack with vuejs
+# webpack with vuejs
 
-npm install
+```{r, engine='bash', count_lines}
+# install dependencies
+$ npm install
 
-npm run build
-npm run dev
-npm run watch
+# Build for production
+$ npm run build
 
-npm start
+# Build for development
+$ npm run dev
+
+# Build for development and watch changes
+$ npm run watch
+
+# Starts Express server on port 8000 
+$ npm start
+```
