@@ -14,7 +14,7 @@ const router = new VueRouter({
 });
 
 // Registering Vue Components
-// Vue.component('example', require('./components/Example.vue'));
+Vue.component('example', require('./components/Example.vue'));
 
 // Creating a Vue instance
 const app = new Vue({
