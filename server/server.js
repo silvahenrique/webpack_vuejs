@@ -28,10 +28,6 @@ app.get('/', (req, res) => {
   });
 });
 
-// app.get('/', (req, res) => {
-//   res.sendFile(path.resolve(__dirname, '../client/views/index.html'));
-// });
-
 const server = app.listen(8000, () => {
   let port = server.address().port;
   console.log(`Server listening on PORT: ${port}.`);
