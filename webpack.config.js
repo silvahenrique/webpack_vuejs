@@ -9,7 +9,7 @@ var inProduction = (process.env.NODE_ENV === "production");
 module.exports = {
   entry: {
     app: './client/src/js/app.js',
-    vendor: ['jquery']
+    // vendor: ['jquery']
   },
   output: {
     path: path.resolve(__dirname, './client/public/js'),
@@ -61,7 +61,7 @@ module.exports = {
         dry: false
       }
     ),
-    new ExtractTextPlugin('[name].css'),
+    new ExtractTextPlugin('[name].[hash].css'),
 
     // new PurifyCSSPlugin({
     //   // Give paths to parse for rules. These should be absolute!
