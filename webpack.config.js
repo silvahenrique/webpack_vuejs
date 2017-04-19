@@ -61,7 +61,7 @@ module.exports = {
         dry: false
       }
     ),
-    new ExtractTextPlugin('[name].[hash].css'),
+    new ExtractTextPlugin('../css/[name].[hash].css'),
 
     // new PurifyCSSPlugin({
     //   // Give paths to parse for rules. These should be absolute!
