@@ -54,7 +54,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(
-      ['js'],
+      ['js', 'css'],
       {
         root: path.resolve(__dirname, './client/public/'),
         verbose: true,
