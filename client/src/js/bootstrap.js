@@ -8,5 +8,7 @@ window.$ = window.jQuery = jQuery;
 window.Vue = Vue;
 window.axios = Axios;
 
-require('bootstrap-sass');
 require('../sass/app.scss');
+
+// require('../../../node_modules/leaflet/dist/leaflet.css');
+// require('../../../node_modules/leaflet/dist/images/*');
