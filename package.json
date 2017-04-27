@@ -45,6 +45,7 @@
     "leaflet": "^1.0.3",
     "leaflet-draw": "^0.4.9",
     "lodash": "^4.17.4",
+    "log4js": "^1.1.1",
     "nexmo": "^2.0.2",
     "socket.io": "^1.7.3",
     "vue": "^2.2.6",

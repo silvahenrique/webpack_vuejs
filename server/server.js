@@ -3,6 +3,11 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
+const log4js = require('log4js');
+
+const logger = log4js.getLogger('APP');
+log4js.loadAppender('file');
+log4js.addAppender(log4js.appenders.file('./server/logs/application.log'), 'APP');
 
 const app = express();
 
@@ -32,5 +37,6 @@ app.get('*', (req, res) => {
 
 const server = app.listen(port = app.get('port'), () => {
   // let port = server.address().port;
-  console.log(`Server listening on PORT: ${port}.`);
+  logger.info(`Server listening on PORT: ${port}.`);
+  // console.log(`Server listening on PORT: ${port}.`);
 });
